@@ -50,3 +50,11 @@ body {
   font-size: 5vh;
   text-align: right;
 }
+@media screen and (max-width: 450px) {
+.quote {
+
+  font-size: 3vh;
+  
+}
+}
+
