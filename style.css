@@ -10,7 +10,10 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: white;
+  background-color: ghostwhite;
+}
+.sameline {
+  display: flex;
 }
 .button {
   font-size: large;
@@ -33,6 +36,7 @@ body {
   width: 80%;
   border-radius: 20px;
   position: relative;
+  background-color: white;
   box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
     rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
 }
@@ -47,6 +51,12 @@ body {
   transition: ease-in-out 1s;
 }
 .author {
-  font-size: 5vh;
+  font-size: 4vh;
   text-align: right;
+  margin-top: 20px;
+}
+@media screen and (max-width: 450px) {
+  .quote {
+    font-size: 3vh;
+  }
 }
