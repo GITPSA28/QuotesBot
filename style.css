@@ -60,11 +60,3 @@ body {
     font-size: 3vh;
   }
 }
-@media screen and (max-width: 450px) {
-.quote {
-
-  font-size: 3vh;
-  
-}
-}
-
