@@ -23,7 +23,7 @@ function fetchQuote(){
     .then(res=>res.json())
     .then(data=>{
         const s=data.content;
-        quote.innerHTML= '<b>'+s+ '</b>';
+        quote.innerHTML= s;
         author.innerHTML= '- '+data.author;
        
     })
