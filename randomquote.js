@@ -1,9 +1,6 @@
 const fetchbutton=document.querySelector('#random');
 const quote=document.querySelector('#quote');
 const author=document.querySelector('#author');
-const defaultBtn = document.querySelector("#default-btn");
-const customBtn = document.querySelector("#custom-btn");
-const img = document.querySelector("#bgimage");
 
 let quotesdata = '{"quotes":[' +
 '{"content":"There is only one thing that makes a dream impossible to achieve: the fear of failure.","author":"Paulo Coelho" },' +
@@ -19,33 +16,14 @@ function getMyQuote() {
     quote.innerHTML =obj.quotes[i].content;
     author.innerHTML= '- '+obj.quotes[i].author;
 }
-
-fetchbutton.addEventListener('click',fetchQuote)
-    
+fetchbutton.addEventListener('click',fetchQuote);
 function fetchQuote(){
     fetch("https://api.quotable.io/random")
     .then(res=>res.json())
     .then(data=>{
         const s=data.content;
-        quote.innerHTML= s;
+        quote.innerHTML= "\""+s+"\"";
         author.innerHTML= '- '+data.author;
        
     })
 }
-customBtn.addEventListener('click',defaultBtnActive);
-function defaultBtnActive(){
-           defaultBtn.click();
-         }
-defaultBtn.addEventListener("change", function(){
-    const file = this.files[0];
-    if(file){
-        const reader = new FileReader();
-        reader.onload = function(){
-        const result = reader.result;
-        img.src = result;
-         }
-           
-        reader.readAsDataURL(file);
-    }
-          
- });

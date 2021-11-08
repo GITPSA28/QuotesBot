@@ -17,8 +17,8 @@
           <i id="menuicon" class="fas fa-bars"></i>
         </label>
         <ul class="navlinks">
-          <li><a class="active" href="#">Home</a></li>
-          <li><a href="coustomize.html">Coustomize</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a  class="active" href="#">Coustomize</a></li>
           <li><a href="#">Thirukural</a></li>
           <li><a href="aboutus.html">About us</a></li>
         </ul>
@@ -28,27 +28,20 @@
       <div class="quote-container">
         <img class="bgimage" id="bgimage" src="bg1.jpg">
         <div class="blackover"></div>
-        <div id="quote" class="quote"><small>Welcome to QuoteBot <br>
-        1.click random quote to generate random quotes <br>
-        2.click random image to generate random background</small> </div>
+        <div id="quote" class="quote">1.Upload your photo <br>
+          2.Click random to get random quotes
+        </div>
       </div>
       <div class="author" id="author"></div>
       <div class="control sameline">
-        <button class="button" id="random">Random Quote</button>
-        <button class="button" onclick="changeimg()">Random image</button>
-        
+        <!--<button class="button" onclick="getMyQuote()">Click me!</button>-->
+        <button class="button" id="random">Random!</button>
+        <button class="button" id="custom-btn" class="button">Upload</button>
+        <input id="default-btn" type="file" hidden>
       </div>
     </div>
+  <script src="coustom.js"></script>
   <script src="randomquote.js"></script>
   <script src="navmobile.js"></script>
-  <script>
-    function changeimg(){
-      const bimg=document.querySelector("#bgimage");
-      fetch("https://source.unsplash.com/random/?night,nature").then(res=>{
-        bimg.src=res.url;
-        console.log(res.json);
-      });  
-    }
-  </script>
   </body>
 </html>
