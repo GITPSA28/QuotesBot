@@ -1,6 +1,10 @@
 const fetchbutton=document.querySelector('#random');
 const quote=document.querySelector('#quote');
 const author=document.querySelector('#author');
+const defaultBtn = document.querySelector("#default-btn");
+const customBtn = document.querySelector("#custom-btn");
+const img = document.querySelector("#bgimage");
+
 let quotesdata = '{"quotes":[' +
 '{"content":"There is only one thing that makes a dream impossible to achieve: the fear of failure.","author":"Paulo Coelho" },' +
 '{"content":"People who are crazy enough to think they can change the world, are the ones who do.","author":"Steve Jobs" },' +
@@ -30,3 +34,21 @@ function fetchQuote(){
 }
 
 getMyQuote();
+
+customBtn.addEventListener('click',defaultBtnActive);
+function defaultBtnActive(){
+           defaultBtn.click();
+         }
+defaultBtn.addEventListener("change", function(){
+    const file = this.files[0];
+    if(file){
+        const reader = new FileReader();
+        reader.onload = function(){
+        const result = reader.result;
+        img.src = result;
+         }
+           
+        reader.readAsDataURL(file);
+    }
+          
+ });
