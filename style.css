@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Quicksand:wght@500;700&family=Secular+One&display=swap");
 * {
   box-sizing: border-box;
   margin: 0;
@@ -5,11 +6,79 @@
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 10%;
   background-color: ghostwhite;
+}
+
+nav {
+  display: flex;
+  width: 100%;
+  height: 80px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 50px 0px 100px;
+  background-color: #ff0081;
+}
+.navtitle {
+  color: white;
+  font-family: "Quicksand";
+  font-weight: 700;
+  font-size: 30px;
+  cursor: pointer;
+}
+.checkbtn {
+  color: white;
+  font-size: 30px;
+  float: right;
+  cursor: pointer;
+  display: none;
+}
+#check {
+  display: none;
+}
+#menuicon {
+  transition: 3s;
+}
+li,
+a {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+  color: white;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+.navlinks {
+  list-style: none;
+}
+.navlinks li {
+  display: inline-block;
+  padding: 0px 20px;
+}
+.navlinks li a {
+  transition: all 0.3s ease 0s;
+}
+.navlinks li a:hover,
+.active {
+  color: #ff0081;
+  background-color: #fff;
+  padding: 10px 20px 10px 20px;
+  border-radius: 10px;
+}
+.navbtn {
+  font-family: "Montserrat", sans-serif;
+  color: black;
+  background-color: white;
+  font-weight: bold;
+  font-size: 15px;
+  padding: 8px 10px;
+  border: 0px solid white;
+  border-radius: 8px;
+  transition: all 0.3s ease 0s;
+}
+.navbtn:hover {
+  cursor: pointer;
+  background-color: #ff0081;
+  color: white;
 }
 .main {
   display: flex;
@@ -21,7 +90,7 @@ body {
   flex-flow: row wrap;
 }
 .button {
-  font-size: large;
+  font-size: 20px;
   padding: 10px 20px 10px 20px;
   background-color: #ff0081;
   border: 0;
@@ -36,7 +105,7 @@ body {
   background-color: #f8faff;
   transition: 1s;
 }
-.container {
+.quote-container {
   display: flex;
   border-radius: 20px;
   position: relative;
@@ -51,7 +120,7 @@ body {
   border-radius: 20px;
   position: absolute;
   object-fit: cover;
-  z-index: 0;
+  z-index: -2;
 }
 .blackover {
   width: 100%;
@@ -60,7 +129,7 @@ body {
   opacity: 0.6;
   border-radius: 20px;
   position: absolute;
-  z-index: 1;
+  z-index: -1;
 }
 .quote {
   width: 100%;
@@ -71,7 +140,7 @@ body {
   color: white;
   font-size: 5vh;
   transition: ease-in-out 1s;
-  z-index: 2;
+  z-index: 0;
 }
 
 .quote:hover {
@@ -84,17 +153,59 @@ body {
   margin-top: 20px;
 }
 @media all and (orientation: portrait) {
-  .quote {
+  .main {
+    padding-top: 10px;
+  }
+  .quote,
+  .author {
     font-size: 3vh;
   }
-  .container {
+  .quote-container {
     min-height: 80vw;
     width: 80vw;
   }
 }
 @media all and (orientation: landscape) {
-  .container {
-    min-height: 80vh;
-    width: 80vh;
+  .main {
+    padding-top: 1%;
+  }
+  .quote-container {
+    min-height: 70vh;
+    width: 70vh;
+  }
+}
+@media (max-width: 940px) {
+  .checkbtn {
+    display: block;
+  }
+  #check:checked ~ ul {
+    left: 0;
+  }
+  nav {
+    height: 60px;
+    padding: 0px 20px 0px 25px;
+  }
+  nav ul {
+    position: fixed;
+    top: 60px;
+    left: -100%;
+    background-color: rgb(22, 22, 22);
+    height: 100vh;
+    width: 100%;
+    z-index: 99;
+    transition: all 0.5s ease;
+  }
+  .navlinks li {
+    display: block;
+    text-align: center;
+  }
+  li,
+  a {
+    font-size: 25px;
+    color: white;
+    margin: 40px 0;
+  }
+  .active {
+    color: #ff0081;
   }
 }

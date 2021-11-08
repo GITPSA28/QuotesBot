@@ -5,11 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/dff77382cf.js" crossorigin="anonymous"></script>
     <title>Quotes Bot</title>
   </head>
   <body>
+    <header>
+      <nav>
+      <div class="navtitle">QuotesBot</div>
+      <input type="checkbox" id="check" onchange="changemenuicon(this)">
+        <label for="check" class="checkbtn">
+          <i id="menuicon" class="fas fa-bars"></i>
+        </label>
+        <ul class="navlinks">
+          <li><a class="active" href="#">Home</a></li>
+          <li><a href="#">Coustomize</a></li>
+          <li><a href="#">Thirukural</a></li>
+        </ul>
+         </nav>
+    </header>
     <div class="main">
-      <div class="container">
+      <div class="quote-container">
         <img class="bgimage" id="bgimage" src="bg1.jpg">
         <div class="blackover"></div>
         <div id="quote" class="quote">Quotes</div>
@@ -20,8 +35,22 @@
       <div class="control sameline">
         <button class="button" onclick="getMyQuote()">Click me!</button>
         <button class="button" id="random">Random!</button>
+
       </div>
     </div>
   <script src="app.js"></script>
+  <script>
+    const menuicon=document.querySelector('#menuicon');
+      function changemenuicon(menubtn){
+    if(menubtn.checked){
+    menuicon.classList.add("fa-times");
+    menuicon.classList.remove("fa-menu");
+    }
+    else{
+    menuicon.classList.remove("fa-times");
+    menuicon.classList.add("fa-menu");
+    }
+}
+  </script>
 </body>
 </html>
