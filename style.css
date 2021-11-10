@@ -139,7 +139,7 @@ a {
   align-items: center;
   justify-content: center;
   color: white;
-  font-size: 5vh;
+  font-size: 4vh;
   transition: ease-in-out 1s;
   z-index: 0;
   text-align: center;
@@ -163,8 +163,8 @@ a {
     font-size: 3vh;
   }
   .quote-container {
-    min-height: 80vw;
-    width: 80vw;
+    min-height: 95vw;
+    width: 95vw;
   }
 }
 @media all and (orientation: landscape) {
