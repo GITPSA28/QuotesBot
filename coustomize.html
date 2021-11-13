@@ -27,7 +27,7 @@
     <div class="main">
       <div class="quote-container">
         <img class="bgimage" id="bgimage" src="bg1.jpg">
-        <div class="blackover"></div>
+        <div class="blackover" id="blackover"></div>
         <div id="quote" class="quote">1.Upload your photo <br>
           2.Click Quotes for random quotes
         </div>
@@ -39,6 +39,28 @@
         <button class="button" id="custom-btn" class="button"><i class="fas fa-upload"></i> Upload</button>
         <input id="default-btn" type="file" hidden>
       </div>
+      <div class="editingtools">
+        <div class="title">Editing tools</div>
+        <div class="tools">
+          
+          <div class="colorpicker">
+            <label for="colorPicker">Text Color:</label>
+            <input type="color" list="colourslist" value="#ffffff" id="colorPicker">
+            <datalist id="colourslist">
+              <option>#ffffff</option>
+              <option>#000000</option>
+              <option>#ff0081</option>
+            </datalist>
+          </div>
+          <div class="blackbgcheck">
+            <label for="blackcheck">Darken:</label>
+            <input type="checkbox" id="blackcheck">
+            
+          </div>
+        </div>
+        
+      </div>
+
     </div>
   <script src="coustom.js"></script>
   <script src="randomquote.js"></script>

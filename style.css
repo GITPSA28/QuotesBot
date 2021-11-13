@@ -154,6 +154,15 @@ a {
   text-align: right;
   margin-top: 10px;
 }
+.editingtools {
+  margin-bottom: 30px;
+}
+.editingtools .title {
+  font-size: larger;
+  text-align: center;
+  margin: 10px;
+}
+
 @media all and (orientation: portrait) {
   .main {
     padding-top: 10px;
