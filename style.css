@@ -1,9 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Quicksand:wght@500;700&family=Secular+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Quicksand:wght@500;700&family=Secular+One&family=Special+Elite&display=swap");
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 body {
   background-color: white;
@@ -16,7 +15,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 0px 50px 0px 100px;
-  background-color: black;
+  background-color: #1c1d1f;
 }
 .navtitle {
   color: white;
@@ -108,6 +107,8 @@ a {
 }
 .quote-container {
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   border-radius: 20px;
   position: relative;
 }
@@ -132,14 +133,17 @@ a {
   position: absolute;
   z-index: -1;
 }
+
 .quote {
+  font-family: "Special Elite";
   width: 100%;
   padding: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
-  font-size: 4vh;
+  font-weight: 400;
+  font-size: 24px;
   transition: ease-in-out 1s;
   z-index: 0;
   text-align: center;
@@ -162,7 +166,53 @@ a {
   text-align: center;
   margin: 10px;
 }
-
+.Aboutus {
+  min-height: calc(100vh - 80px);
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-flow: wrap;
+}
+.card {
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 0px 30px 0px;
+  margin: 20px;
+  border-radius: 20px;
+  box-shadow: 0.6em 0.6em 1.2em #d2dce9, -0.5em -0.5em 1em #ffffff;
+}
+.card .profilepic {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.card .profilepic .dp {
+  width: 60%;
+  border-radius: 50%;
+}
+.card .name {
+  color: #ff0081;
+  font-size: 1.6rem;
+  padding-top: 10px;
+}
+.card .role {
+  color: #6c758f;
+  padding-bottom: 10px;
+  font-size: 1.2rem;
+}
+.card .social-icon {
+  color: #5a6070;
+  font-size: 2rem;
+}
+.social-icon:hover {
+  color: #ff0081;
+  transition: 0.3s;
+}
 @media all and (orientation: portrait) {
   .main {
     padding-top: 10px;
@@ -183,6 +233,22 @@ a {
   .quote-container {
     min-height: 70vh;
     width: 70vh;
+  }
+}
+@media (max-width: 425px) {
+  .card .profilepic {
+    width: 200px;
+  }
+  .card .name {
+    font-size: 1.2rem;
+    padding-top: 10px;
+  }
+  .card .role {
+    padding-bottom: 10px;
+    font-size: 0.9rem;
+  }
+  .card .social-icon {
+    font-size: 1.7rem;
   }
 }
 @media (max-width: 940px) {
