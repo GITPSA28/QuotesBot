@@ -18,10 +18,10 @@ function getMyQuote() {
 }
 fetchbutton.addEventListener('click',fetchQuote);
 function fetchQuote(){
-    fetch("https://api.quotable.io/random")
+    fetch('https://dummyjson.com/quotes/random')
     .then(res=>res.json())
     .then(data=>{
-        const s=data.content;
+        const s=data.quote;
         quote.innerHTML= "\""+s+"\"";
         author.innerHTML= '- '+data.author;
        
